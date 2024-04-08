@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useRef, useEffect } from 'react'
 import SongControl from './components/SongControl'
 import StudyGif from './components/StudyGif'
 import Header from './components/Header'
@@ -9,8 +9,20 @@ import './App.css'
 function App() {
   const [songIndex, setSongIndex] = useState(0);
   const [isPlaying, setIsPlaying] = useState(false);
+  const audioRef=useRef(null);
+  
   //const [volume, setVolume] = useState(50); 
+  useEffect(() => {
+    const audioElement = audioRef.current;
 
+    if (isPlaying) {
+      audioElement.play().catch(error => {
+        console.log("Failed to play audio:", error);
+      });
+    } else {
+      audioElement.pause();
+    }
+  }, [songIndex, isPlaying]);
 
   const handleSongChangeNext = () => {
     if(songIndex === Songs.length-1) {
@@ -60,6 +72,12 @@ function App() {
             onTogglePlayPause={togglePlayPause}
             onSongChangeNext={handleSongChangeNext}
             onSongChangePrev={handleSongChangePrev}
+          />
+        </div>
+        <div>
+          <audio
+            ref={audioRef}
+            src={currentSong.url}
           />
         </div>
       </div>
