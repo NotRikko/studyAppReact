@@ -2,13 +2,18 @@ import { useState, useRef, useEffect } from 'react'
 import SongControl from './components/SongControl'
 import StudyGif from './components/StudyGif'
 import Header from './components/Header'
+import Prompt from './components/Prompt'
 import {Songs} from './Data'
 
 import './App.css'
 
 function App() {
-  const [songIndex, setSongIndex] = useState(0);
-  const [isPlaying, setIsPlaying] = useState(false);
+  const [songIndex, setSongIndex] = useState(0)
+  const [isPlaying, setIsPlaying] = useState(false)
+  const [task, setTask] = useState('')
+  const [showPrompt, setShowPrompt] = useState(true);
+  const [timerDuration, setTimerDuration] = useState(0);
+  const [timerRunning, setTimerRunning] = useState(false);
   const audioRef=useRef(null);
   
   //const [volume, setVolume] = useState(50); 
@@ -23,6 +28,35 @@ function App() {
       audioElement.pause();
     }
   }, [songIndex, isPlaying]);
+
+ 
+
+  const startTimer = (timerDuration) => {
+    console.log("Entering startTimer");
+    if (timerDuration > 0 && !timerRunning) {
+      console.log("Beginning")
+      setTimerRunning(true);
+      const interval = setInterval(() => {
+        setTimerDuration((timerDuration) => {
+          const updatedDuration = timerDuration -1
+          setTimerDuration(updatedDuration);
+          if (updatedDuration === 0) {
+            clearInterval(interval);
+            setTimerRunning(false);
+            setShowPrompt(true);
+            console.log("Finished")
+          } else {
+            console.log(updatedDuration);
+            return updatedDuration
+          }
+        });
+      }, 10000); 
+    } else {
+      console.log("Error!")
+    }
+  };
+
+  
 
   const handleSongChangeNext = () => {
     if(songIndex === Songs.length-1) {
@@ -45,6 +79,14 @@ function App() {
     setIsPlaying((prevState) => !prevState);
   };
 
+  const handleStartButtonClick = (activity,duration) => {
+    setTask(activity);
+    setTimerDuration(duration);
+    startTimer(duration);
+    console.log("Starting Timer");
+    setShowPrompt(false);
+  }
+
   //const handleVolumeChange = (newVolume) => {
     //setVolume(newVolume);
   //};
@@ -55,8 +97,12 @@ function App() {
 
   return (
     <div id="pageBody">
+      {showPrompt && (<Prompt onStart={handleStartButtonClick}/>)}
       <div id="header">
-        <Header />
+        <Header
+          task={task}
+          timerDuration={timerDuration}
+        />
       </div>
       <div id="mainContainer">
         <div id="wrapperDiv">

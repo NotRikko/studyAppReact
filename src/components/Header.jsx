@@ -1,8 +1,10 @@
-function Header({task, time}) {
+function Header({task, timerDuration}) {
+    
+    
     return (
         <div id="taskTime">
         <div id="task">Task: {task}</div>
-        <div id="time">Time: {time}</div>
+        <div id="time">Time: {timerDuration} minutes</div>
         </div>
     )
    
