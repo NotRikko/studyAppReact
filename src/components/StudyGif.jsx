@@ -1,8 +1,16 @@
-import {Songs} from '../Data.jsx';
+import {useState} from 'react'
 import PropTypes from 'prop-types';
 
-function StudyGif({songTitle, songArtist}) {
-    return (
+function StudyGif({songTitle, songArtist, audioRef, currentSongUrl}) {
+
+  const handleVolumeChange = (event) => {
+    const newVolume = parseFloat(event.target.value);
+    if (audioRef.current) {
+      audioRef.current.volume = newVolume;
+    }
+  };
+
+  return (
     <div id ="studyGifContainer">
       <img
       id="studyGif"
@@ -10,7 +18,19 @@ function StudyGif({songTitle, songArtist}) {
       />
       <div id="songTitle">{songTitle}</div>
       <div id="songArtist">{songArtist}</div>
-      <input type="range" id="volumeSlider" />
+      <audio
+        ref={audioRef}
+        src={currentSongUrl}
+      />
+      <input 
+        type="range" 
+        id="volumeSlider" 
+        defaultValue="0.5"
+        onChange={handleVolumeChange}
+        min="0"
+        max="1"
+        step="0.01"
+      />
     </div>
     )
 }
@@ -18,6 +38,8 @@ function StudyGif({songTitle, songArtist}) {
 StudyGif.propTypes = {
   songTitle: PropTypes.string.isRequired,
   songArtist: PropTypes.string.isRequired,
+  audioRef: PropTypes.object.isRequired, 
+  currentSongUrl: PropTypes.string.isRequired,
 };
 
 

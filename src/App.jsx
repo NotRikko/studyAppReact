@@ -14,9 +14,7 @@ function App() {
   const [showPrompt, setShowPrompt] = useState(true);
   const [timerDuration, setTimerDuration] = useState(0);
   const [timerRunning, setTimerRunning] = useState(false);
-  const audioRef=useRef(null);
-  
-  //const [volume, setVolume] = useState(50); 
+  const audioRef = useRef(null);
   useEffect(() => {
     const audioElement = audioRef.current;
 
@@ -32,9 +30,7 @@ function App() {
  
 
   const startTimer = (timerDuration) => {
-    console.log("Entering startTimer");
     if (timerDuration > 0 && !timerRunning) {
-      console.log("Beginning")
       setTimerRunning(true);
       const interval = setInterval(() => {
         setTimerDuration((timerDuration) => {
@@ -44,7 +40,6 @@ function App() {
             clearInterval(interval);
             setTimerRunning(false);
             setShowPrompt(true);
-            console.log("Finished")
           } else {
             console.log(updatedDuration);
             return updatedDuration
@@ -83,13 +78,12 @@ function App() {
     setTask(activity);
     setTimerDuration(duration);
     startTimer(duration);
-    console.log("Starting Timer");
     setShowPrompt(false);
   }
 
-  //const handleVolumeChange = (newVolume) => {
-    //setVolume(newVolume);
-  //};
+  const handleVolumeChange = (event) => {
+    setVolume(event.target.value);
+  };
 
   let currentSong =Songs[songIndex];
 
@@ -109,8 +103,9 @@ function App() {
           <StudyGif
             songTitle={currentSong.title}
             songArtist={currentSong.artist}
-            //volume={volume}
-            //handleVolumeChange={handleVolumeChange}
+            handleVolumeChange={handleVolumeChange}
+            audioRef={audioRef}
+            currentSongUrl={currentSong.url}
           />
         
           <SongControl
@@ -118,12 +113,6 @@ function App() {
             onTogglePlayPause={togglePlayPause}
             onSongChangeNext={handleSongChangeNext}
             onSongChangePrev={handleSongChangePrev}
-          />
-        </div>
-        <div>
-          <audio
-            ref={audioRef}
-            src={currentSong.url}
           />
         </div>
       </div>
