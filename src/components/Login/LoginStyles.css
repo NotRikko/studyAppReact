@@ -59,7 +59,7 @@ form {
     margin-right: 25px;
 }
 
-label {
+.loginLabel{
     display: flex;
     flex-direction: column;
 }

@@ -12,14 +12,14 @@ export default function LoginSection() {
                 </h3>
             </div>
             <form >
-                <label>
+                <label class="loginLabel">
                     Username: 
                     <input
                         type="text" 
                         autoComplete="off"
                     />
                 </label>
-                <label>
+                <label class="loginLabel">
                     Password:
                     <input
                         type="text" 
@@ -27,9 +27,13 @@ export default function LoginSection() {
                     />
                 </label>
                 <button type="submit">Submit</button>
-                <input
-                    type="checkbox"
-                />
+                <label style={{ display: 'flex', justifyContent: 'center' }}>
+                    <input
+                        type="checkbox"
+                        style={{ marginRight: '5px', width: '25px' }}
+                    />
+                    Remember me
+                </label>
             </form>
             <div id="loginFooter">
                <p>
