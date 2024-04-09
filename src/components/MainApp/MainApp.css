@@ -1,0 +1,219 @@
+#pageBody {
+    background-color: rgb(25, 24, 34);
+    color: white;
+    height:100vh;
+    width: 100vw;
+    padding: 0;
+    margin: 0;
+  }
+  
+  
+  #prompt {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 4vh;
+    position: absolute;
+    margin: auto;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right:0;
+    width: 60vw;
+    height: 70vh;
+    background-color: inherit;
+    border: 1px solid white;
+    z-index: 999;
+    color: white;
+  }
+  
+  #question,
+  #promptInput,
+  #promptButton {
+    color: white;
+    background-color: rgba(81, 64, 100, 0);
+  }
+  
+  #question {
+    font-size: 38px;
+    text-align: center;
+  }
+  
+  #howLong {
+    font-size: 25px;
+  }
+  #promptInput {
+    font-size: 20px;
+    height: 50px;
+    width: 170px;
+    border: 1px solid rgb(255, 255, 255);
+  }
+  
+  #timerSet {
+    font-size: 20px;
+    height: 50px;
+    width: 120px;
+    border: 1px solid white;
+    background-color: inherit;
+    color: rgb(255, 255, 255);
+  }
+  #promptButton {
+    height: 50px;
+    width: 100px;
+    border: 1px solid white;
+    border-radius: 5px;
+  }
+  
+  @media (orientation: portrait) {
+    #question {
+        font-size: 28px;
+    }
+  }
+  
+  #mainContainer {  
+    display: flex;
+    flex-grow: 1;
+    justify-content: center;
+    align-items: center;
+    border: 3px solid white;
+    border-radius: 25px;
+    margin-left: 25vw;
+    margin-right: 25vw;
+  }
+  
+  #wrapperDiv {
+    display: flex;
+    flex-direction: column;
+    align-items:center;
+    justify-content: center;
+    width: 63vw;
+    height: 83vh;
+    min-height: 500px;
+    gap: 15px;
+  }
+  
+  
+  #headerContainer {
+    width: 55vw;
+    margin-left: 2vw;
+    margin-top: 2vh;
+    align-self: flex-start;
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  #rightSide {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  #timer {
+    font-size: 22px;
+  }
+  
+  #darkMode {
+    border: none;
+    color: white;
+    background-color: inherit;
+  }
+  
+  
+  #studyGifContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: inherit;
+    gap: 15px;
+  }
+  
+  
+  
+  
+  #task,
+  #time {
+    font-size: 20px;
+    background-color: inherit;
+  }
+  
+  #studyGif {
+    width: 22vw;
+    height: 22vw;
+    min-width: 200px;
+    min-height: 200px;
+    border-radius: 10px;
+  }
+  
+  #subContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: auto;
+    margin-bottom: auto;
+    gap: 2vh;
+    min-height: 10px;
+  }
+  
+  @media (orientation: portrait) {
+    #subContainer {
+        margin-top: auto;
+        margin-bottom: auto;
+    }
+  
+  }
+  
+  #songTitle {
+    font-size: 25px;
+  }
+  
+  #songArtist {
+    font-size: 20px;
+  }
+  #volumeSlider {
+    -webkit-appearance: none;
+    width: 50%;
+    height: 2%;
+    background: rgb(54, 54, 54);
+    border-radius: 25px;
+  }
+  
+  #volumeSlider::-webkit-slider-thumb{
+    -webkit-appearance: none;
+    appearance: none;
+    width: 15px;
+    height: 15px;
+    background: rgb(255, 255, 255);
+    opacity: 1;
+    border-radius: 50%;
+  
+  }
+  
+  #songControl {
+    display: flex;
+    gap: 10px;
+  }
+  
+  
+  #play {
+    font-size: 25px;
+    border-radius: 40px;
+    border: none;
+  }
+  
+  #return,
+  #skip {
+    font-size: 18px;
+    border-radius: 40px;
+    border: none;
+  }
+  
+  #play,
+  #return,
+  #skip {
+    color: white;
+    background-color: inherit;
+  }

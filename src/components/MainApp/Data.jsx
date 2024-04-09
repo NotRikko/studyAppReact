@@ -1,6 +1,6 @@
-import Kyoto from './assets/songs/Kyoto.mp3';
-import Moonshine from './assets/songs/Moonshine.mp3';
-import Alone from './assets/songs/Alone.mp3';
+import Kyoto from '../../assets/songs/Kyoto.mp3'
+import Moonshine from '../../assets/songs/Moonshine.mp3';
+import Alone from '../../assets/songs/Alone.mp3';
 
 export const Songs = [
     {
