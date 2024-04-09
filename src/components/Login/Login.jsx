@@ -1,10 +1,10 @@
 import LoginSection from './LoginSection'
 import './LoginStyles.css'
 
-function Login() {
+function Login({onLogin}) {
     return (
         <div id="mainContainerLogin">
-            <LoginSection />
+            <LoginSection onSubmission={onLogin}/>
         </div>
     )
 }

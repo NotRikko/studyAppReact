@@ -1,6 +1,6 @@
 import {useState} from 'react'
 
-export default function LoginSection() {
+export default function LoginSection({onSubmission}) {
     const [formData, setFormData] = useState({
     username: "",
     password: "",
@@ -16,6 +16,7 @@ export default function LoginSection() {
     const handleSubmit = (event) => {
         event.preventDefault();
         alert(`Username: ${formData.username}, Email: ${formData.password}, Message: ${formData.rememberMe}`)
+        onSubmission();
     }
 
 
@@ -23,14 +24,15 @@ export default function LoginSection() {
     return (
         <div id="loginContainer">
             <div id="loginHeader">
-                <h2>Login to Study Room</h2>
-                <h3>No account? 
+                <h1>Study Room</h1>
+                <h2>Login</h2>
+                <h4>No account? 
                     <a 
                     href="https://google.com"
                     target="_blank" 
                     rel="noopener noreferrer"
                     >Create an account</a>
-                </h3>
+                </h4>
             </div>
             <form onSubmit={handleSubmit}>
                 <label className="loginLabel">
@@ -46,7 +48,7 @@ export default function LoginSection() {
                 <label className="loginLabel">
                     <b>Password </b>
                     <input
-                        type="text" 
+                        type="password" 
                         name="password"
                         autoComplete="off"
                         value={formData.password}
