@@ -1,4 +1,5 @@
 import {useState} from 'react'
+import Users from '../../Users'
 
 export default function LoginSection({onSubmission}) {
     const [formData, setFormData] = useState({
@@ -16,7 +17,13 @@ export default function LoginSection({onSubmission}) {
     const handleSubmit = (event) => {
         event.preventDefault();
         alert(`Username: ${formData.username}, Email: ${formData.password}, Message: ${formData.rememberMe}`)
-        onSubmission();
+        const validUser = Users.find((user) => user.username === formData.username && user.password === formData.password)
+        if (validUser) {
+            onSubmission();
+        } else {
+            alert("User/password incorrect")
+        }
+        
     }
 
 
