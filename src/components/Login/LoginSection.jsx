@@ -14,14 +14,14 @@ export default function LoginSection() {
             </div>
             <form >
                 <label class="loginLabel">
-                    Username: 
+                    <b>Username </b>
                     <input
                         type="text" 
                         autoComplete="off"
                     />
                 </label>
                 <label class="loginLabel">
-                    Password:
+                    <b>Password </b>
                     <input
                         type="text" 
                         autoComplete="off"

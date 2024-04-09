@@ -28,7 +28,7 @@
     min-width: 300px;
     margin-right: auto;
     margin-left: 0;
-    background-color: rgba(0, 0, 0, 0.918);
+    background-color: rgba(0, 0, 0, 0.932);
     color: white;
     /*border-left: 10px solid rgb(196, 106, 164, 0.43);*/
 }
@@ -58,6 +58,16 @@ form {
     margin-left: 25px;
     margin-right: 25px;
 }
+
+form label input[type="text"]  {
+    font-size: 20px;
+    font-family:Arial, Helvetica, sans-serif
+}
+
+form label input[type="text"]:focus  {
+    outline: none;
+}
+
 
 .loginLabel{
     display: flex;
