@@ -1,8 +1,9 @@
+
 export default function LoginSection() {
     return (
         <div id="loginContainer">
             <div id="loginHeader">
-                <h2>Login Page</h2>
+                <h2>Login to Study Room</h2>
                 <h3>No account? 
                     <a 
                     href="https://google.com"
@@ -28,10 +29,9 @@ export default function LoginSection() {
                 </label>
                 <button type="submit">Submit</button>
                 <label style={{ display: 'flex', justifyContent: 'center' }}>
-                    <input
-                        type="checkbox"
-                        style={{ marginRight: '5px', width: '25px' }}
-                    />
+                    <input 
+                    type="checkbox"
+                    id="rememberCheckbox" />
                     Remember me
                 </label>
             </form>

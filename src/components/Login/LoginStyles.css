@@ -10,7 +10,7 @@
     margin-right: 0;
     background-image: url('../../assets/images/backgroundPic.jpg');
     background-size: cover;
-    background-position: 0% 100%;
+    background-position: 75% 100%;
     background-repeat: no-repeat;
 
 }
@@ -73,6 +73,15 @@ button {
 
 a {
     color: rgb(228, 149, 200)
+}
+
+#rememberCheckbox {
+    margin-right: 5px;
+    width: 25px;
+}
+
+#rememberCheckbox:checked {
+    accent-color: rgb(145,81,123);
 }
 
 
