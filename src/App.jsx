@@ -1,6 +1,7 @@
 import {useState} from 'react'
 import MainApp from './components/MainApp/MainApp'
 import Login from './components/Login/Login'
+import Signup from './components/Signup/Signup'
 import './App.css'
 
 
@@ -13,7 +14,8 @@ function App () {
   }
   return (
     <div>
-      {isLoggedIn ? <MainApp /> : <Login onLogin={handleLoginStatus} />}
+      {/*{isLoggedIn ? <MainApp /> : <Login onLogin={handleLoginStatus} />} */}
+      <Signup />
     </div>
   )
 }

@@ -41,7 +41,7 @@ export default function LoginSection({onSubmission}) {
                     >Create an account</a>
                 </h4>
             </div>
-            <form onSubmit={handleSubmit}>
+            <form id="loginForm" onSubmit={handleSubmit}>
                 <label className="loginLabel">
                     <b>Username </b>
                     <input
