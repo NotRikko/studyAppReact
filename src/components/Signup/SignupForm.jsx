@@ -1,4 +1,4 @@
-import {Link} from 'react-router-dom'
+import {Link} from 'react-router-dom';
 
 function SignupForm() {
     return (
@@ -6,7 +6,7 @@ function SignupForm() {
             <div id="signupHeader">
                 <h2>Sign Up</h2>
                 <h3>Track your time spent studying and connect with the community.</h3>
-                <h3>Already have an account? <a>Log in</a></h3>
+                <h3>Already have an account? <Link to="/">Log in</Link></h3>
             </div>
             <form id="signupForm">
                 <label class="signupLabel">

@@ -14,8 +14,7 @@ function App () {
   }
   return (
     <div>
-      {/*{isLoggedIn ? <MainApp /> : <Login onLogin={handleLoginStatus} />} */}
-      <Signup />
+      {isLoggedIn ? <MainApp /> : <Login onLogin={handleLoginStatus} />} 
     </div>
   )
 }

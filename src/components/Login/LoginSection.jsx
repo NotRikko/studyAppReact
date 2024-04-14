@@ -1,3 +1,4 @@
+import {Link} from "react-router-dom"
 import {useState} from 'react'
 import Users from '../../Users'
 
@@ -34,11 +35,10 @@ export default function LoginSection({onSubmission}) {
                 <h1>Study Room</h1>
                 <h2>Login</h2>
                 <h4>No account? 
-                    <a 
-                    href="https://google.com"
-                    target="_blank" 
-                    rel="noopener noreferrer"
-                    >Create an account</a>
+                    <Link 
+                    to="signup"
+                    >Create an account
+                    </Link>
                 </h4>
             </div>
             <form id="loginForm" onSubmit={handleSubmit}>
